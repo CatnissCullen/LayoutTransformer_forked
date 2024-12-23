@@ -29,26 +29,26 @@ ensure_dir(cfg['TEST']['OUTPUT_DIR'])
 
 # setting logger
 if not opt.eval_only:
-    handlers = [logging.FileHandler(os.path.join(cfg['OUTPUT']['OUTPUT_DIR'],'output.log'),
-                                    mode = 'w'), logging.StreamHandler()]
+    handlers = [logging.FileHandler(os.path.join(cfg['OUTPUT']['OUTPUT_DIR'], 'output.log'),
+                                    mode='w'), logging.StreamHandler()]
 else:
     handlers = [logging.FileHandler(os.path.join(cfg['OUTPUT']['OUTPUT_DIR'],
-                                   'output_eval.log'), mode = 'w'), logging.StreamHandler()]
-logging.basicConfig(handlers = handlers, level=logging.INFO)
+                                                 'output_eval.log'), mode='w'), logging.StreamHandler()]
+logging.basicConfig(handlers=handlers, level=logging.INFO)
 logger = logging.getLogger('root')
-coloredlogs.install(logger = logger, fmt='%(asctime)s [%(name)s] %(levelname)s %(message)s')
+coloredlogs.install(logger=logger, fmt='%(asctime)s [%(name)s] %(levelname)s %(message)s')
 logger.info('Setup output directory - {}.'.format(cfg['OUTPUT']['OUTPUT_DIR']))
-
 
 if __name__ == '__main__':
     D, D_r = build_loader(cfg, opt.eval_only)
     model = build_model(cfg)
-    
+
     if opt.eval_only:
         assert opt.checkpoint is not None, 'Please provide model ckpt for testing'
         checkpoint = torch.load(opt.checkpoint)
         model.load_state_dict(checkpoint['state_dict'])
         infer = build_inference(cfg)
+        print("Dataset length: ", len(D))
         infer.run(cfg=cfg, model=model, dataset=D.dataset)
     else:
         T = build_trainer(cfg=cfg, model=model, dataloader=D, dataloader_r=D_r, opt=opt)

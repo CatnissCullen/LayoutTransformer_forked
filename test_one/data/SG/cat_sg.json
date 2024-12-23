@@ -1,0 +1,23 @@
+{
+    "objects": [
+        {
+            "id": 0,
+            "name": "cat",
+            "attributes": [
+                "sitting"
+            ]
+        },
+        {
+            "id": 1,
+            "name": "table",
+            "attributes": []
+        }
+    ],
+    "relationships": [
+        {
+            "sub_id": 0,
+            "predicate": "on",
+            "obj_id": 1
+        }
+    ]
+}

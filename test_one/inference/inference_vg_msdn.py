@@ -2,14 +2,16 @@ import multiprocessing
 from joblib import Parallel, delayed
 import sys
 
-sys.path.append("../")
-sys.path.append("./")
+sys.path.append("../code/")
+sys.path.append("/")
 from model.Model import Rel2Layout, RelEncoder, Rel2Bbox, Rel2RegLayout
+from trainer import Trainer, PretrainTrainer, RegTrainer
 from utils import ensure_dir
 from loader.COCODataset import COCORelDataset
 from loader.VGmsdnDataset import VGmsdnRelDataset, SNPSingleData
 import torch.backends.cudnn as cudnn
 from model import build_model
+import argparse
 import logging
 import json
 import yaml
@@ -20,6 +22,7 @@ import numpy as np
 from utils import ensure_dir
 import pickle
 import torch
+import random
 from random import randrange
 from tqdm import tqdm
 import time

@@ -1,0 +1,105 @@
+{
+  "relationships": [
+    {
+      "sub_id": 1,
+      "predicate": "have",
+      "obj_id": 0
+    },
+    {
+      "sub_id": 3,
+      "predicate": "next_to",
+      "obj_id": 2
+    },
+    {
+      "sub_id": 5,
+      "predicate": "on",
+      "obj_id": 4
+    },
+    {
+      "sub_id": 6,
+      "predicate": "on",
+      "obj_id": 3
+    },
+    {
+      "sub_id": 7,
+      "predicate": "next_to",
+      "obj_id": 2
+    }
+  ],
+  "objects": [
+    {
+      "box": [
+        399,
+        93,
+        429,
+        113
+      ],
+      "class": "hat"
+    },
+    {
+      "box": [
+        402,
+        94,
+        447,
+        193
+      ],
+      "class": "man"
+    },
+    {
+      "box": [
+        54,
+        115,
+        265,
+        308
+      ],
+      "class": "horse"
+    },
+    {
+      "box": [
+        24,
+        134,
+        81,
+        304
+      ],
+      "class": "woman"
+    },
+    {
+      "box": [
+        412,
+        105,
+        425,
+        121
+      ],
+      "class": "head"
+    },
+    {
+      "box": [
+        401,
+        92,
+        430,
+        111
+      ],
+      "class": "hat"
+    },
+    {
+      "box": [
+        26,
+        282,
+        67,
+        308
+      ],
+      "class": "shoe"
+    },
+    {
+      "box": [
+        26,
+        138,
+        76,
+        304
+      ],
+      "class": "woman"
+    }
+  ],
+  "path": "2324100.jpg",
+  "id": 94411
+}
